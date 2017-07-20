@@ -1,0 +1,11 @@
+<script src="webcam.min.js"></script>
+<div id="my_camera" style="width:320px; height:240px;"></div>
+<script language="JavaScript">
+var cam ={target:"",opencam:function(preview, target){Webcam.attach('#'+preview);cam.target = target;document.getElementById('camtrigger').style.display =''},take_snapshot:function(){Webcam.snap(function(data_uri){document.getElementById(cam.target).innerHTML ='<img src="'+data_uri+'"/>';document.getElementById('camtrigger').style.display ='none';Webcam.reset()})}}
+</script>
+<div id="my_result1"><a href="javascript:cam.opencam('my_camera','my_result1')">Open Cam</a></div>
+<div id="my_result2"><a href="javascript:cam.opencam('my_camera','my_result2')">Open Cam</a></div>
+<div id="my_result3"><a href="javascript:cam.opencam('my_camera','my_result3')">Open Cam</a></div>
+<div id="my_result4"><a href="javascript:cam.opencam('my_camera','my_result4')">Open Cam</a></div>
+<a href="javascript:cam.take_snapshot()" id="camtrigger" style="display: none;">Take Snapshot</a>
+<!-- https://github.com/jhuckaby/webcamjs/blob/master/DOCS.md -->
